@@ -1,4 +1,4 @@
-## Story Consesus Implementation
+## Story Consensus Implementation
 
 Golang consensus layer implementation and staking contracts for the Story L1 blockchain.
 
@@ -10,7 +10,7 @@ You may find pre-built binaries for our latest stable release in our [release pa
 
 ## Architecture
 
-Story draws inspiration from ETH PoS in decoupling execution and consensus clients. The execution client relays EVM blocks into the `story` consesus client via Engine ABI, using an ABCI++ adapter to make EVM state compatible with that of CometBFT. With this architecture, consensus efficiency is no longer bottlenecked by execution transaction throughput.
+Story draws inspiration from ETH PoS in decoupling execution and consensus clients. The execution client relays EVM blocks into the `story` consensus client via Engine ABI, using an ABCI++ adapter to make EVM state compatible with that of CometBFT. With this architecture, consensus efficiency is no longer bottlenecked by execution transaction throughput.
 
 ![Node Architecture](assets/diagram.png)
 
@@ -92,7 +92,7 @@ By default, network configurations and data are stored relative to the `story` r
 ```markdown
 story/
 ├── config/
-│ ├── config.toml                  # networking & consesus settings
+│ ├── config.toml                  # networking & consensus settings
 │ ├── genesis.json                 # blockchain genesis state
 │ ├── story.toml                   # client configs
 │ ├── node_key.json                # p2p node key  [SENSITIVE]
@@ -154,7 +154,7 @@ To find your node ID, you can [install cometBFT](https://docs.cometbft.com/v0.37
 
 Once your genesis state, network configs, and seed nodes are defined, you can start the network.
 
-First, run your execution client, making sure the path to the engine-API JWT file as well as the genesis state itself is correctly setup on the consesus side. Similar to `story`, you may override the default execution client configs by passing a `--config` flag to your alternate `story-geth` data folder:
+First, run your execution client, making sure the path to the engine-API JWT file as well as the genesis state itself is correctly setup on the consensus side. Similar to `story`, you may override the default execution client configs by passing a `--config` flag to your alternate `story-geth` data folder:
 
 ```bash
 ./geth --config ${GETH_ROOT_DATA_DIR}
